@@ -3,7 +3,7 @@
 
 name: Build and deploy WAR app to Azure Web App - SmartBodyGym
 env: # Or  as an environment variable
-     APP_CONFIGURATION_CONNECTION_STRING: ${{secrets.APP_CONFIGURATION_CONNECTION_STRING}}
+     APP_CONFIGURATION_CONNECTION_STRING: ${{ secrets.APP_CONFIGURATION_CONNECTION_STRING }}
 
 on:
   push:
