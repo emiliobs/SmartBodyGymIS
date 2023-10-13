@@ -16,7 +16,7 @@
                     <h2>Register.</h2>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="RegisterServlet" method="post">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name:</label>
                             <input type="name" class="form-control" id="name" required name="name"  placeholder="Please, enter Your Name.....">
@@ -40,7 +40,7 @@
 
                         <div class="mb-3">
                             <label class="form-check-label mb-1" for="admin">Check if You are SmartBody Staff.</label><br>
-                            <input class="form-check-input" type="checkbox" value="admin" id="admin">
+                            <input class="form-check-input" type="checkbox" name="staff" value="admin" id="admin">
                         </div>   
                         <hr/>
                         <div class="text-center">

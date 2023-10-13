@@ -10,24 +10,35 @@ public class Register
     private int id;
     private String name;
     private String last_name;
-    private String mail;
+    private String email;
     private String password;
     private String confirmation_password;
     private boolean staff;
 
-    public Register()
-    {
-    }
-
-    public Register(int id, String name, String last_name, String mail, String password, String confirmation_password, boolean staff)
+    public Register(int id, String name, String last_name, String email, String password, String confirmation_password, boolean staff)
     {
         this.id = id;
         this.name = name;
         this.last_name = last_name;
-        this.mail = mail;
+        this.email = email;
         this.password = password;
         this.confirmation_password = confirmation_password;
         this.staff = staff;
+    }
+
+    public Register(String name, String last_name, String email, String password, String confirmation_password, boolean staff)
+    {
+        this.name = name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+        this.confirmation_password = confirmation_password;
+        this.staff = staff;
+    }
+    
+
+    public Register()
+    {
     }
 
     // Getters y setters
@@ -61,14 +72,14 @@ public class Register
         this.last_name = last_name;
     }
 
-    public String getMail()
+    public String getEmail()
     {
-        return mail;
+        return email;
     }
 
-    public void setMail(String mail)
+    public void setEmail(String email)
     {
-        this.mail = mail;
+        this.email = email;
     }
 
     public String getPassword()
