@@ -1,4 +1,4 @@
-# SmartBodyGymb
+# SmartBody Gym
 ## Home:
 <img width="1277" alt="image" src="https://github.com/emiliobs/SmartBodyGymIS/assets/3122465/c48b8ba3-7394-4ccb-a462-6b3866b0014c">
 
