@@ -2,7 +2,7 @@
 <%@include  file="menu.jsp" %>
 
 <div class="container" style="margin-bottom: 0; padding-bottom: 0;">
-    <h3>registered users!</h3>
+    <h3>Registered Users List!</h3>
     <hr/>
    
 </div>

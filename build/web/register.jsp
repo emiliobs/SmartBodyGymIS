@@ -10,7 +10,7 @@
 
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 mt-5">
             <div class="card mt-1" style="background-color: #375A7F;">
                 <div class="card-header text-center">
                     <h2>Register.</h2>
