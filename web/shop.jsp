@@ -15,19 +15,10 @@
                     <p>Price £ 155.0</p>
                 </div>
                 <div class="card-footer mt-1">
-                    <button class="btn btn-danger">Add to Bag</button>
+                     <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>     
                 </div>
             </div>
-            <div  class="bodycard">
-                <img src="Img/combogym.jpg"  alt="principa imagen"/>
-                <div class="cardImg">
-                    <h5>Set Weight Cable Pulley System Gym</h5>
-                    <p>Price £1000.0</p>
-                </div>
-                <div class="card-footer mt-1">
-                    <button class="btn btn-danger">Add to Bag</button>
-                </div>
-            </div>
+
             <div  class="bodycard">
                 <img src="Img/th.jpeg"  alt="principa imagen"/>
                 <div class="cardImg">
@@ -35,7 +26,7 @@
                     <p>Price £500.0</p>
                 </div>
                 <div class="card-footer mt-1">
-                    <button class="btn btn-danger">Add to Bag</button>
+                     <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>     
                 </div>
             </div>
             <div  class="bodycard">
@@ -45,7 +36,7 @@
                     <p>Price £300.0</p>
                 </div>
                 <div class="card-footer mt-1">
-                    <button class="btn btn-danger">Add to Bag</button>
+                     <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>     
                 </div>
             </div>
             <div  class="bodycard">
@@ -55,7 +46,7 @@
                     <p>Price 450.9£</p>
                 </div>
                 <div class="card-footer mt-1">
-                    <button class="btn btn-danger">Add to Bag</button>
+                     <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>     
                 </div>
             </div>
         </div>
@@ -70,7 +61,7 @@
                     </div>
                     <div class="card-footer">                       
                         <p>Fitness Bike  Price: £35.00</p>    
-                        <button class="btn btn-danger">Add to Bag</button>          
+                         <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>               
                     </div>
                 </div>
             </div>
@@ -80,8 +71,8 @@
                         <img class="img-fluid" src="Img/shop_3.png" height="200" alt=""/>
                     </div>
                     <div class="card-footer">
-                           <p>Gym Mediatation £35.00</p>    
-                        <button class="btn btn-danger">Add to Bag</button>        
+                        <p>Gym Mediatation £35.00</p>    
+                        <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>             
                     </div>
                 </div>
             </div>
@@ -92,7 +83,7 @@
                     </div>
                     <div class="card-footer">
                         <p>gym tracksuit Price: £35</p>    
-                        <button class="btn btn-danger">Add to Bag</button>        
+                         <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>            
                     </div>
                 </div>
             </div>
@@ -102,15 +93,15 @@
                         <img class="img-fluid" src="Img/shop_5.png" height="200" alt=""/>
                     </div>
                     <div class="card-footer">
-                           <p>Gym Equipment Gear £45</p>    
-                        <button class="btn btn-danger">Add to Bag</button>        
+                        <p>Gym Equipment Gear £45</p>    
+                        <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>            
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <hr/>
-     <div class="d-flex"> 
+    <div class="d-flex"> 
         <div class="row">
             <div class="col-3">
                 <div class="card">
@@ -119,7 +110,7 @@
                     </div>
                     <div class="card-footer">                       
                         <p>Dumbbells Black  £45.00</p>    
-                        <button class="btn btn-danger">Add to Bag</button>          
+                         <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>              
                     </div>
                 </div>
             </div>
@@ -129,8 +120,8 @@
                         <img class="img-fluid" src="Img/shop_7.png" height="200" alt=""/>
                     </div>
                     <div class="card-footer">
-                           <p>Deluxe Treadmill £45</p>    
-                        <button class="btn btn-danger">Add to Bag</button>        
+                        <p>Deluxe Treadmill £45</p>    
+                        <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>            
                     </div>
                 </div>
             </div>
@@ -141,7 +132,7 @@
                     </div>
                     <div class="card-footer">
                         <p>Double Weights £45</p>    
-                        <button class="btn btn-danger">Add to Bag</button>        
+                        <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>            
                     </div>
                 </div>
             </div>
@@ -151,8 +142,8 @@
                         <img class="img-fluid" src="Img/shop_10.png" height="200" alt=""/>
                     </div>
                     <div class="card-footer">
-                           <p>Fitness Bag £35.00</p>    
-                        <button class="btn btn-danger">Add to Bag</button>        
+                        <p>Fitness Bag £35.00</p>    
+                        <a href="cartShop.jsp"> <button class="btn btn-danger">Add to Bag</button>  </a>                             
                     </div>
                 </div>
             </div>
