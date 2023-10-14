@@ -44,9 +44,9 @@
                             </div>
                         </li>
 
-                        <li class="nav-item">
+<!--                        <li class="nav-item">
                             <a class="nav-link" href="${pageContext.servletContext.contextPath}/register.jsp">Register</a>
-                        </li>         
+                        </li>         -->
                         <li class="nav-item">
                             <a class="nav-link" href="${pageContext.servletContext.contextPath}/login.jsp" >Login</a>
                         </li>     

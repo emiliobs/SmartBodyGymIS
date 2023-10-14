@@ -2,8 +2,8 @@ package Controllers;
 
 import DAO.RegisterDAO;
 import Models.Register;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,23 +14,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * The RegisterServlet class handles user registration requests. It receives user data from a form and
+ * creates a new user registration record in the database using the RegisterDAO.
  *
  * @author Emilio
  */
-@WebServlet(name = "RegisterServlet", urlPatterns =
-{
-    "/RegisterServlet"
-})
+@WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
 public class RegisterServlet extends HttpServlet
 {
-
     RegisterDAO registerDAO;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        
-      
+        // This method can be used to process requests if needed.
     }
 
     @Override
@@ -47,35 +44,35 @@ public class RegisterServlet extends HttpServlet
         String name = request.getParameter("name");
         String lastName = request.getParameter("lastName");
         String password = request.getParameter("password");
-        String confirPassword = request.getParameter("confirmPassword");
+        String confirmPassword = request.getParameter("confirmPassword");
         String staff = request.getParameter("staff");
 
-        Register register = new Register(name, lastName, staff, password, confirPassword, Boolean.parseBoolean(staff));
-        
+        // Create a new Register object with the provided user data
+        Register register = new Register(name, lastName, staff, password, confirmPassword, Boolean.parseBoolean(staff));
+
         registerDAO = new RegisterDAO();
-        
+
         try
         {
+            // Create the user registration record in the database
             registerDAO.create(register);
-            
         }
         catch (SQLException ex)
         {
             Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
-            System.out.println("Useer created in the DB!" + e.getMessage());
+            System.out.println("User created in the DB! " + e.getMessage());
         }
-        
-        response.sendRedirect("index.jsp");
 
+        // Redirect the user to a different page, such as the index.jsp page
+        response.sendRedirect("index.jsp");
     }
 
     @Override
     public String getServletInfo()
     {
-        return "Short description";
-    }// </editor-fold>
-
+        return "Handles user registration requests.";
+    }
 }

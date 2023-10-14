@@ -20,19 +20,19 @@
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">Name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            <input type="text" class="form-control" id="name" required placeholder="Enter your name">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                            <input type="email" class="form-control" id="email" required placeholder="name@example.com">
                         </div>
                         <div class="mb-3">
                             <label for="subject" class="form-label">Subject:</label>
-                            <input type="text" class="form-control" id="subject" placeholder="Subject of the message">
+                            <input type="text" class="form-control" id="subject" required placeholder="Subject of the message">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message:</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                            <textarea class="form-control" id="message" rows="4" required placeholder="Enter your message"></textarea>
                         </div>
                         <hr/>
                         <button type="submit" class="btn btn-danger">Submit</button>

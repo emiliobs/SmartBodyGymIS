@@ -1,20 +1,35 @@
 package Models;
 
 /**
+ * The Register class represents user registration information, including user
+ * ID, name, last name, email, password, confirmation password, and a flag
+ * indicating whether the user is staff. It provides constructors and getter and
+ * setter methods for these attributes.
  *
  * @author Emilio
  */
 public class Register
 {
 
-    private int id;
-    private String name;
-    private String last_name;
-    private String email;
-    private String password;
-    private String confirmation_password;
-    private boolean staff;
+    private int id; // Unique user ID
+    private String name; // User's first name
+    private String last_name; // User's last name
+    private String email; // User's email address
+    private String password; // User's password
+    private String confirmation_password; // Password confirmation
+    private boolean staff; // Indicates if the user is a staff member
 
+    /**
+     * Constructor for creating a Register object with all attributes.
+     *
+     * @param id Unique user ID
+     * @param name User's first name
+     * @param last_name User's last name
+     * @param email User's email address
+     * @param password User's password
+     * @param confirmation_password Password confirmation
+     * @param staff Indicates if the user is a staff member
+     */
     public Register(int id, String name, String last_name, String email, String password, String confirmation_password, boolean staff)
     {
         this.id = id;
@@ -26,6 +41,16 @@ public class Register
         this.staff = staff;
     }
 
+    /**
+     * Constructor for creating a Register object without a user ID.
+     *
+     * @param name User's first name
+     * @param last_name User's last name
+     * @param email User's email address
+     * @param password User's password
+     * @param confirmation_password Password confirmation
+     * @param staff Indicates if the user is a staff member
+     */
     public Register(String name, String last_name, String email, String password, String confirmation_password, boolean staff)
     {
         this.name = name;
@@ -35,13 +60,15 @@ public class Register
         this.confirmation_password = confirmation_password;
         this.staff = staff;
     }
-    
 
+    /**
+     * Default constructor for creating an empty Register object.
+     */
     public Register()
     {
     }
 
-    // Getters y setters
+    // Getters and setters for the class attributes
     public int getId()
     {
         return id;
@@ -111,5 +138,4 @@ public class Register
     {
         this.staff = staff;
     }
-
 }
