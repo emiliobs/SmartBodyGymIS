@@ -18,7 +18,7 @@
                         <h3>WE WELCOME EVERYBODY</h3>            
                         </p>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="m-1"></div>
@@ -106,5 +106,27 @@
         </div>
     </div>
 </div>
+
+<%
+    if (request.getAttribute("message") != null)
+    {
+%> 
+<script>
+
+    $(document).ready(function ()
+    {
+        Swal.fire(
+                'Great!',
+                '<%= request.getAttribute("message")%>',
+                'success'
+                )
+    });
+
+</script>
+<%
+    }
+
+%>
+
 
 <%@include  file="foorter.jsp" %> 

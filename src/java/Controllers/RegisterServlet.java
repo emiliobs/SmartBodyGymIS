@@ -14,20 +14,67 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * The RegisterServlet class handles user registration requests. It receives user data from a form and
- * creates a new user registration record in the database using the RegisterDAO.
+ * The RegisterServlet class handles user registration requests. It receives
+ * user data from a form and creates a new user registration record in the
+ * database using the RegisterDAO.
  *
  * @author Emilio
  */
-@WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
+@WebServlet(name = "RegisterServlet", urlPatterns =
+{
+    "/RegisterServlet"
+})
 public class RegisterServlet extends HttpServlet
 {
+
     RegisterDAO registerDAO;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        // This method can be used to process requests if needed.
+        String name = request.getParameter("name");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("password_two");
+        String staff = request.getParameter("staff");
+        if (staff == null)
+        {
+            staff = "User";
+        }
+        int result = 0;
+        String message = "Error to Save a new User in the DB!";
+
+        // Create a new Register object with the provided user data
+        Register register = new Register(name, lastName, email, password, confirmPassword, staff);
+
+        registerDAO = new RegisterDAO();
+
+        try
+        {
+            // Create the user registration record in the database
+            result = registerDAO.create(register);
+
+            if (result != 0)
+            {
+                message = "You are now a SmartBody.";
+            }
+
+            request.setAttribute("message", message);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Sorry, Error:  " + e.getMessage());
+        }
+
+        // Redirect the user to a different page, such as the index.jsp page     
+        //response.sendRedirect("index.jsp");
     }
 
     @Override
@@ -41,33 +88,7 @@ public class RegisterServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        String name = request.getParameter("name");
-        String lastName = request.getParameter("lastName");
-        String password = request.getParameter("password");
-        String confirmPassword = request.getParameter("confirmPassword");
-        String staff = request.getParameter("staff");
-
-        // Create a new Register object with the provided user data
-        Register register = new Register(name, lastName, staff, password, confirmPassword, Boolean.parseBoolean(staff));
-
-        registerDAO = new RegisterDAO();
-
-        try
-        {
-            // Create the user registration record in the database
-            registerDAO.create(register);
-        }
-        catch (SQLException ex)
-        {
-            Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (Exception e)
-        {
-            System.out.println("User created in the DB! " + e.getMessage());
-        }
-
-        // Redirect the user to a different page, such as the index.jsp page
-        response.sendRedirect("index.jsp");
+        processRequest(request, response);
     }
 
     @Override

@@ -25,8 +25,10 @@ public class RegisterDAO
      * @param register The Register object containing user information to be inserted.
      * @throws SQLException if a database error occurs.
      */
-    public void create(Register register) throws SQLException
+    public int create(Register register) throws SQLException
     {
+        int result =0;
+        
         connection = DatabaseConnection.getConnection();
         String sql = "INSERT INTO Register (name, last_name, email, password, confirmation_password, staff) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql))
@@ -36,9 +38,11 @@ public class RegisterDAO
             statement.setString(3, register.getEmail());
             statement.setString(4, register.getPassword());
             statement.setString(5, register.getConfirmation_password());
-            statement.setBoolean(6, register.isStaff());
-            statement.executeUpdate();
+            statement.setString(6, register.isStaff());
+             result  = statement.executeUpdate();
         }
+        
+        return result;
     }
 
     /**
@@ -65,7 +69,7 @@ public class RegisterDAO
                     register.setEmail(resultSet.getString("email"));
                     register.setPassword(resultSet.getString("password"));
                     register.setConfirmation_password(resultSet.getString("confirmation_password"));
-                    register.setStaff(resultSet.getBoolean("staff"));
+                    register.setStaff(resultSet.getString("staff"));
                     return register;
                 }
             }
@@ -94,7 +98,7 @@ public class RegisterDAO
                 register.setEmail(resultSet.getString("email"));
                 register.setPassword(resultSet.getString("password"));
                 register.setConfirmation_password(resultSet.getString("confirmation_password"));
-                register.setStaff(resultSet.getBoolean("staff"));
+                register.setStaff(resultSet.getString("staff"));
                 registers.add(register);
             }
         }
@@ -117,7 +121,7 @@ public class RegisterDAO
             statement.setString(3, register.getEmail());
             statement.setString(4, register.getPassword());
             statement.setString(5, register.getConfirmation_password());
-            statement.setBoolean(6, register.isStaff());
+            statement.setString(6, register.isStaff());
             statement.setInt(7, register.getId());
             statement.executeUpdate();
         }

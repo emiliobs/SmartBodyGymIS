@@ -17,7 +17,7 @@ public class Register
     private String email; // User's email address
     private String password; // User's password
     private String confirmation_password; // Password confirmation
-    private boolean staff; // Indicates if the user is a staff member
+    private String staff; // Indicates if the user is a staff member
 
     /**
      * Constructor for creating a Register object with all attributes.
@@ -30,7 +30,7 @@ public class Register
      * @param confirmation_password Password confirmation
      * @param staff Indicates if the user is a staff member
      */
-    public Register(int id, String name, String last_name, String email, String password, String confirmation_password, boolean staff)
+    public Register(int id, String name, String last_name, String email, String password, String confirmation_password, String staff)
     {
         this.id = id;
         this.name = name;
@@ -51,7 +51,7 @@ public class Register
      * @param confirmation_password Password confirmation
      * @param staff Indicates if the user is a staff member
      */
-    public Register(String name, String last_name, String email, String password, String confirmation_password, boolean staff)
+    public Register(String name, String last_name, String email, String password, String confirmation_password, String staff)
     {
         this.name = name;
         this.last_name = last_name;
@@ -129,12 +129,12 @@ public class Register
         this.confirmation_password = confirmation_password;
     }
 
-    public boolean isStaff()
+    public String isStaff()
     {
         return staff;
     }
 
-    public void setStaff(boolean staff)
+    public void setStaff(String staff)
     {
         this.staff = staff;
     }
