@@ -117,7 +117,7 @@
     {
         Swal.fire(
                 'Great!',
-                '<%= request.getAttribute("message")%>',
+              '<%= request.getAttribute("message")%>',
                 'success'
                 )
     });

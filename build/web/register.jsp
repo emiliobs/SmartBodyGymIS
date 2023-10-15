@@ -63,7 +63,7 @@
 </div>
 
 <%
-    if (request.getAttribute("message") != null)
+      if (request.getAttribute("message") != null)
     {
 %> 
 <script>
@@ -72,7 +72,7 @@
     {
         Swal.fire(
                 'Great!',
-                ''<%= request.getAttribute("message")%>,
+                '<%= request.getAttribute("message")%>',
                 'success'
                 )
     });
