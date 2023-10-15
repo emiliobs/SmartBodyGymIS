@@ -60,7 +60,6 @@ public class RegisterServlet extends HttpServlet
                 message = "You are now a SmartBody.";
             }
 
-             request.setAttribute("staff",  staff);
             request.setAttribute("message", message);
             request.getRequestDispatcher("/index.jsp").forward(request, response);
 
