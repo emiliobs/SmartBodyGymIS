@@ -39,13 +39,26 @@
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Join Us</a>
                             <div class="dropdown-menu" data-bs-popper="static">
                                 <a class="dropdown-item" href="${pageContext.servletContext.contextPath}/register.jsp">Register</a>
+                                <%
+                                    if (request.getAttribute("staff") == "Admin")
+                                    {
+                                %>
                                 <a class="dropdown-item" href="${pageContext.servletContext.contextPath}/registeredusers.jsp">Registered Users</a>
+                                <%
+                                }
+                                else
+                                {
+                                %>
+                                <a class="dropdown-item" href="${pageContext.servletContext.contextPath}/registeredusers.jsp">Registered Users</a>
+                                <%
+                                    }
+                                %>
                             </div>
                         </li>
 
-<!--                        <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.servletContext.contextPath}/register.jsp">Register</a>
-                        </li>         -->
+                        <!--                        <li class="nav-item">
+                                                    <a class="nav-link" href="${pageContext.servletContext.contextPath}/register.jsp">Register</a>
+                                                </li>         -->
                         <li class="nav-item">
                             <a class="nav-link" href="${pageContext.servletContext.contextPath}/login.jsp" >Login</a>
                         </li>     
