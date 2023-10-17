@@ -32,6 +32,7 @@ public class RegisterServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
+
         String name = request.getParameter("name");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
@@ -49,19 +50,46 @@ public class RegisterServlet extends HttpServlet
         Register register = new Register(name, lastName, email, password, confirmPassword, staff);
 
         registerDAO = new RegisterDAO();
-
         try
         {
-            // Create the user registration record in the database
-            result = registerDAO.create(register);
-
-            if (result != 0)
+            if (request.getParameter("btnSave") != null)
             {
-                message = "You are now a SmartBody.";
-            }
+//                // Create the user registration record in the database
+                result = registerDAO.create(register);
 
-            request.setAttribute("message", message);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+                if (result != 0)
+                {
+                    message = "You are now a SmartBody.";
+                }
+
+                request.setAttribute("message", message);
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+
+            }
+            else if (request.getParameter("btnEdit") != null)
+            {
+//                if (result != 0)
+//                {
+//                    message = "Data edited Successfuly.";
+//                }
+
+            }
+            else if (request.getParameter("btnDelete") != null)
+            {
+                int id = Integer.parseInt(request.getParameter("id"));
+
+                result = registerDAO.delete(id);
+
+                if (result != 0)
+                {
+                    message = "Data was Delete Successful.";
+
+                }
+
+                request.setAttribute("message", message);
+                request.getRequestDispatcher("/registeredusers.jsp").forward(request, response);
+
+            }
 
         }
         catch (SQLException ex)

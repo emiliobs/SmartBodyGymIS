@@ -49,7 +49,7 @@
                         </div>   
                         <hr/>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success">Submit</button>                          
+                            <button type="submit"  name="btnSave" class="btn btn-success">Submit</button>                          
                         </div>
                     </form>
                 </div>
@@ -61,6 +61,8 @@
         </div>
     </div>
 </div>
+
+
 
 <%
       if (request.getAttribute("message") != null)

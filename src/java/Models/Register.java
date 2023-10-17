@@ -129,7 +129,7 @@ public class Register
         this.confirmation_password = confirmation_password;
     }
 
-    public String isStaff()
+    public String getStaff()
     {
         return staff;
     }
