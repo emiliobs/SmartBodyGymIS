@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet
 
                 if (result != 0)
                 {
-                    message = "You are now a SmartBody.";
+                    message = "You are now a SmartBody Member!";
                 }
 
                 request.setAttribute("message", message);
