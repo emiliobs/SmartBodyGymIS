@@ -6,13 +6,13 @@
 <div class="container" style="margin-bottom: 0; padding-bottom: 0;">
     <h3>SmartBody Gym!</h3>
     <hr/>
-    <div class="row">
-
-        <div class="col-sm-3">
-
+    <div class="row">       
+        <div class="col-lg-6 text-center">
+            <h3>Plan Prices</h3>
+            <img src="Img/price.png" class="img-fluid mt-4" width="100%" alt=""/>
         </div>
+        <div class="col-lg-6">
 
-        <div class="col-sm-6 mt-5">
             <div class="card mt-1" style="background-color: #375A7F;">
                 <div class="card-header text-center">
                     <h2>Register.</h2>
@@ -35,8 +35,8 @@
                             <label for="password" class="form-label">Password:</label>
                             <!--<input type="password" class="form-control" required id="password" name="confirmPassword" placeholder="Please, enter your Confirm Password.....">-->
                             <input class="form-control" id="password" name="password" type="password" pattern="^\S{5,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 5 characters' : '');
-                                    if (this.checkValidity())
-                                        form.password_two.pattern = this.value;" placeholder="Password - You must enter 5 Characters....." required>
+                                        if (this.checkValidity())
+                                            form.password_two.pattern = this.value;" placeholder="Password - You must enter 5 Characters....." required>
                         </div>     
                         <div class="mb-3">
                             <label for="password" class="form-label">Confirm Password:</label>
@@ -53,19 +53,14 @@
                         </div>
                     </form>
                 </div>
-
             </div>
-        </div>
-
-        <div class="col-sm-3">
         </div>
     </div>
 </div>
 
 
 
-<%
-      if (request.getAttribute("message") != null)
+<%    if (request.getAttribute("message") != null)
     {
 %> 
 <script>
