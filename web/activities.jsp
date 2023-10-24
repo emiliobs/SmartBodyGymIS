@@ -168,7 +168,26 @@
                     </div>
                 </div>
     </div>
-
 </div>
+<%    if (request.getAttribute("message") != null)
+    {
+%> 
+<script>
+
+    $(document).ready(function ()
+    {
+        Swal.fire(
+                'Welcome!',
+                '<%= request.getAttribute("message")%>',
+                'success'
+                )
+    });
+
+</script>
+<%
+    }
+
+%>
+
 
 <%@include  file="foorter.jsp" %> 

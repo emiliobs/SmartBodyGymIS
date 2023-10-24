@@ -1,8 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include  file="menu.jsp" %>
-
-
-
 <div class="container" style="margin-bottom: 0; padding-bottom: 0;">
     <h3>SmartBody Gym!</h3>
     <hr/>
@@ -12,7 +9,6 @@
             <img src="Img/price.png" class="img-fluid mt-4" width="100%" alt=""/>
         </div>
         <div class="col-lg-6">
-
             <div class="card mt-1" style="background-color: #375A7F;">
                 <div class="card-header text-center">
                     <h2>Register.</h2>
@@ -35,9 +31,8 @@
                             <label for="password" class="form-label">Password:</label>
                             <!--<input type="password" class="form-control" required id="password" name="confirmPassword" placeholder="Please, enter your Confirm Password.....">-->
                             <input class="form-control" id="password" name="password" type="password" pattern="^\S{5,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 5 characters' : '');
-                                        if (this.checkValidity())
-                                            form.password_two.pattern = this.value;" placeholder="Password - You must enter 5 Characters....." required>
-                        </div>     
+                                    if (this.checkValidity())
+                                        form.password_two.pattern = this.value;" placeholder="Password - You must enter 5 Characters....." required>                        </div>     
                         <div class="mb-3">
                             <label for="password" class="form-label">Confirm Password:</label>
                             <!--<input type="password" class="form-control" required id="password" name="password" placeholder="Please, enter your Password.....">-->
@@ -49,7 +44,8 @@
                         </div>   
                         <hr/>
                         <div class="text-center">
-                            <button type="submit"  name="btnSave" class="btn btn-success">Submit</button>                          
+                            <button type="submit"  name="btnSave" class="btn btn-success">Save</button>      |
+                             <button type="submit"  name="btnClean" class="btn btn-danger">Clean</button>   
                         </div>
                     </form>
                 </div>
@@ -57,9 +53,6 @@
         </div>
     </div>
 </div>
-
-
-
 <%    if (request.getAttribute("message") != null)
     {
 %> 
@@ -79,5 +72,4 @@
     }
 
 %>
-
 <%@include  file="foorter.jsp" %> 

@@ -39,17 +39,19 @@ public class RegisterServlet extends HttpServlet
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("password_two");
         String staff = request.getParameter("staff");
+        
         if (staff == null)
         {
             staff = "User";
         }
         int result = 0;
-        String message = "Error to Save a new User in the DB!";
+        String message = "Sorry, Error to Save a new User in the DB!";
 
         // Create a new Register object with the provided user data
         Register register = new Register(name, lastName, email, password, confirmPassword, staff);
 
         registerDAO = new RegisterDAO();
+
         try
         {
             if (request.getParameter("btnSave") != null)
@@ -57,13 +59,30 @@ public class RegisterServlet extends HttpServlet
 //                // Create the user registration record in the database
                 result = registerDAO.create(register);
 
-                if (result != 0)
+                if (result == 0)
                 {
                     message = "You are now a SmartBody Member!";
                 }
 
                 request.setAttribute("message", message);
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
+
+            }
+            else if (request.getParameter("btnLogin") != null)
+            {
+                if (email.equalsIgnoreCase("emilio@hotmail.com") && password.equalsIgnoreCase("55555"))
+                {
+                 
+                    message = "Great,You are now logged in!";
+                    request.setAttribute("message", message);
+                    request.getRequestDispatcher("/activities.jsp").forward(request, response);
+                }
+                else
+                {
+                    message = "Sorry, Email or Password Incorrect!";
+                    request.setAttribute("message", message);
+                    request.getRequestDispatcher("/login.jsp").forward(request, response);
+                }
 
             }
             else if (request.getParameter("btnEdit") != null)

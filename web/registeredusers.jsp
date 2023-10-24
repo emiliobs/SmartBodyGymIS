@@ -13,7 +13,7 @@
 
         <div class="row">   
             <div class="col-9 mt-2">
-                <h2>Registered Users List!</h2>
+                <h2>Registered Users Admin!</h2>
             </div>
             <div class="col-3">
                 <div class="d-grid gap-0 mt-3">
